@@ -8,6 +8,11 @@ import {
   ShieldCheckIcon,
 } from "lucide-react";
 import { Counter } from "./Counter";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 export function Benefits() {
   const benefits = [
@@ -35,6 +40,12 @@ export function Benefits() {
       description:
         "Recognizing that each client has unique requirements, we offer flexible security plans that can be customized to adapt to evolving security needs.",
     },
+  ];
+
+  const images = [
+    "/images/about/about1.jpg",
+    "/images/about/about2.jpg",
+    "/images/about/about3.jpg",
   ];
 
   return (
@@ -71,7 +82,6 @@ export function Benefits() {
 
           {/* Vision & Mission */}
           <div className="grid md:grid-cols-2 gap-8 mt-10">
-            {/* Vision */}
             <div className="group relative bg-white/90 backdrop-blur-md rounded-2xl shadow-xl p-8 hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-blue-100 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-blue-600/5 -z-10 group-hover:opacity-100 transition-opacity"></div>
               <div className="flex items-center gap-4 mb-4 relative z-10">
@@ -87,7 +97,6 @@ export function Benefits() {
               </p>
             </div>
 
-            {/* Mission */}
             <div className="group relative bg-white/90 backdrop-blur-md rounded-2xl shadow-xl p-8 hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-blue-100 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-blue-600/5 -z-10 group-hover:opacity-100 transition-opacity"></div>
               <div className="flex items-center gap-4 mb-4 relative z-10">
@@ -106,15 +115,32 @@ export function Benefits() {
           </div>
         </div>
 
-        {/* Image + Benefits Section */}
+        {/* Image Slider + Benefits List */}
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-          {/* Image with Counter */}
+          {/* Image Slider */}
           <div className="w-full md:w-1/2 relative group">
-            <img
-              src="https://images.unsplash.com/photo-1521791055366-0d553381c0ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-              alt="Security professionals discussing strategy and security plans"
-              className="rounded-3xl shadow-2xl w-full object-cover aspect-[4/3] transition-transform group-hover:scale-105"
-            />
+            {/* Swiper Slider */}
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              spaceBetween={20}
+              slidesPerView={1}
+              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              pagination={{ clickable: true }}
+              loop
+              className="rounded-3xl overflow-hidden shadow-2xl"
+            >
+              {images.map((img, idx) => (
+                <SwiperSlide key={idx} className="relative">
+                  <img
+                    src={img}
+                    alt={`Slide ${idx + 1}`}
+                    className="w-full object-cover aspect-[4/3] transition-transform group-hover:scale-105"
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* Fixed Counter on the slider */}
             <div className="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur-md p-4 md:p-6 rounded-2xl shadow-xl z-20 border border-gray-100 hover:shadow-2xl transition-all max-w-[80%] md:max-w-none">
               <div className="flex items-center">
                 <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent mr-3 md:mr-4">
