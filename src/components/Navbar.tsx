@@ -4,18 +4,7 @@ import { MenuIcon, XIcon, ShieldCheckIcon } from 'lucide-react';
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
-  // Scroll background effect
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Lock scroll when menu is open
-  useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
-  }, [isMenuOpen]);
+  const [activeSection, setActiveSection] = useState('hero');
 
   const navItems = [
     { name: 'Home', id: 'hero' },
@@ -25,15 +14,40 @@ export function Navbar() {
     { name: 'Contact', id: 'contact' },
   ];
 
-  // Smooth scroll to section
-  const scrollToSection = (id: string) => {
-  const el = document.getElementById(id);
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setIsMenuOpen(false);
-  }
-};
+  // Scroll background effect & active section
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 10);
 
+      // Determine active section
+      let current = 'hero';
+      navItems.forEach((item) => {
+        const section = document.getElementById(item.id);
+        if (section) {
+          const offsetTop = section.offsetTop - 100; // 100px buffer
+          if (scrollY >= offsetTop) current = item.id;
+        }
+      });
+      setActiveSection(current);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Lock scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+  }, [isMenuOpen]);
+
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
     <header
@@ -63,9 +77,10 @@ export function Navbar() {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="relative text-gray-800 font-medium transition-all hover:text-blue-600 px-2 py-1 rounded-lg
+              className={`relative font-medium transition-all px-2 py-1 rounded-lg
                 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all
-                hover:after:w-full hover:scale-105 hover:shadow-sm active:scale-95"
+                hover:after:w-full hover:scale-105 hover:shadow-sm active:scale-95
+                ${activeSection === item.id ? 'text-blue-600 after:w-full' : 'text-gray-800'}`}
             >
               {item.name}
             </button>
@@ -100,16 +115,15 @@ export function Navbar() {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-gray-800 font-medium py-2 px-4 rounded-lg hover:text-blue-600 hover:bg-blue-50
-                transition-all hover:scale-105 shadow-sm hover:shadow-md active:scale-95 text-left"
+              className={`py-2 px-4 rounded-lg font-medium text-left transition-all shadow-sm hover:scale-105 hover:shadow-md active:scale-95
+                ${activeSection === item.id ? 'text-blue-600 bg-blue-50' : 'text-gray-800 hover:bg-blue-50'}`}
             >
               {item.name}
             </button>
           ))}
           <button
             onClick={() => scrollToSection('contact')}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-center font-medium
-              transition-all hover:scale-105 shadow-sm hover:shadow-md active:scale-95"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-center font-medium transition-all hover:scale-105 shadow-sm hover:shadow-md active:scale-95"
           >
             Get a Quote
           </button>
