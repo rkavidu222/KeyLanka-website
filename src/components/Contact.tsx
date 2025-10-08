@@ -65,7 +65,7 @@ export function Contact() {
           {contactDetails.map((item, index) => (
             <div
               key={index}
-              className={`group relative bg-white rounded-3xl shadow-lg p-6 md:p-8 border border-gray-100 hover:shadow-2xl transition-all`}
+              className={`group relative bg-white rounded-3xl shadow-lg p-6 md:p-8 border border-gray-100 hover:shadow-2xl transition-all flex flex-col items-center text-center`}
             >
               <div
                 className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mb-4 bg-gradient-to-br ${item.bg} group-hover:scale-110 transition-transform`}
