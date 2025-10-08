@@ -81,16 +81,16 @@ export function Training() {
         {/* Training & Operations Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           {/* Training Card */}
-          <div className="group relative bg-white/90 backdrop-blur-md rounded-3xl p-8 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300">
-            <div className="flex items-center mb-6">
-              <div className="bg-gradient-to-br from-cyan-500 to-cyan-600 p-3 rounded-xl mr-4 text-white group-hover:rotate-12 transition-transform shadow-lg">
+          <div className="group relative bg-white/90 backdrop-blur-md rounded-3xl p-8 shadow-md hover:shadow-xl transition-all duration-300">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start mb-6 gap-4">
+              <div className="bg-gradient-to-br from-cyan-500 to-cyan-600 p-3 rounded-xl text-white group-hover:rotate-12 transition-transform shadow-lg flex justify-center">
                 <BookOpenIcon className="h-6 w-6" />
               </div>
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-700 to-pink-500 bg-clip-text text-transparent">
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-700 to-pink-500 bg-clip-text text-transparent text-center sm:text-left">
                 Training Excellence
               </h3>
             </div>
-            <p className="text-gray-700 mb-6 text-lg">
+            <p className="text-gray-700 mb-6 text-lg text-center sm:text-left">
               Upon recruitment, our security guards undergo comprehensive training to ensure a high standard of preparedness and professionalism.
             </p>
             <ul className="space-y-4">
@@ -104,16 +104,16 @@ export function Training() {
           </div>
 
           {/* Operations Card */}
-          <div className="group relative bg-white/90 backdrop-blur-md rounded-3xl p-8 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300">
-            <div className="flex items-center mb-6">
-              <div className="bg-gradient-to-br from-pink-500 to-pink-600 p-3 rounded-xl mr-4 text-white group-hover:-rotate-12 transition-transform shadow-lg">
+          <div className="group relative bg-white/90 backdrop-blur-md rounded-3xl p-8 shadow-md hover:shadow-xl transition-all duration-300">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start mb-6 gap-4">
+              <div className="bg-gradient-to-br from-pink-500 to-pink-600 p-3 rounded-xl text-white group-hover:-rotate-12 transition-transform shadow-lg flex justify-center">
                 <ClipboardCheckIcon className="h-6 w-6" />
               </div>
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-700 to-cyan-500 bg-clip-text text-transparent">
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-700 to-cyan-500 bg-clip-text text-transparent text-center sm:text-left">
                 Operational Excellence
               </h3>
             </div>
-            <p className="text-gray-700 mb-6 text-lg">
+            <p className="text-gray-700 mb-6 text-lg text-center sm:text-left">
               Our standard operations procedures ensure meticulous deployment and ongoing management of security personnel.
             </p>
             <ul className="space-y-4">
@@ -146,11 +146,11 @@ export function Training() {
             {emergencies.map((item, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow border border-gray-200"
+                className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow border border-gray-200 flex flex-col items-center text-center"
               >
                 {/* Icon with gradient */}
                 <div
-                  className={`p-4 rounded-xl inline-block mb-6 bg-gradient-to-br ${item.color} text-white shadow-md group-hover:scale-110 transition-transform`}
+                  className={`p-4 rounded-xl inline-block mb-6 bg-gradient-to-br ${item.color} text-white shadow-md group-hover:scale-110 flex justify-center`}
                 >
                   {React.cloneElement(item.icon, { className: "h-8 w-8 text-white" })}
                 </div>
