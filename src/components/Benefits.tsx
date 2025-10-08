@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { Counter } from "./Counter";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -71,13 +71,33 @@ export function Benefits() {
             <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent tracking-tight">
               Company Introduction
             </h2>
-            <p className="text-gray-700 text-base md:text-lg max-w-3xl mx-auto leading-relaxed bg-white/70 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-blue-100/50 shadow-md">
-              Key Lanka Solutions (Pvt) Ltd is a professional security and safety
-              solutions provider committed to delivering reliable, efficient, and
-              innovative services. Managed by experienced ex-army officers, our
-              leadership brings decades of operational expertise, discipline, and
-              integrity to every project.
-            </p>
+            <div className="text-gray-700 text-base md:text-lg max-w-4xl mx-auto leading-relaxed bg-white/70 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-blue-100/50 shadow-md text-justify">
+              <p className="mb-4">
+                <strong>Key Lanka Solutions (Pvt) Ltd</strong> is a professional security and safety
+                solutions provider committed to delivering reliable, efficient, and innovative
+                services. The company is managed by a team of well-experienced ex-army officers who
+                bring decades of operational expertise, discipline, and leadership into every aspect
+                of the business.
+              </p>
+              <p className="mb-4">
+                With a strong foundation built on integrity, dedication, and precision, we ensure
+                that our clients receive the highest level of protection and service. Our management
+                team has extensive experience in operations, logistics, and emergency response,
+                enabling us to design customized solutions that meet the unique requirements of each
+                client.
+              </p>
+              <p>
+                We focus on fire and safety management, security operations, and risk mitigation,
+                offering a comprehensive range of services for residential, commercial, and
+                industrial sectors. Key Lanka Solutions stands for trust, professionalism, and a
+                commitment to creating a safe and secure environment for all our clients.
+              </p>
+              
+               {/* Company Registration Number */}
+              <p className="mt-4 text-sm text-blue-700 font-semibold">
+                Company Registration Number: MOD/CSD/PS/01/1006
+              </p>
+            </div>
           </div>
 
           {/* Vision & Mission */}
@@ -91,9 +111,9 @@ export function Benefits() {
                 </h3>
               </div>
               <p className="text-gray-700 text-base leading-relaxed relative z-10">
-                To be the most trusted and innovative security and safety
-                solutions provider in Sri Lanka, setting new standards in
-                professionalism, reliability, and client satisfaction.
+                To be the most trusted and innovative security and safety solutions provider in Sri
+                Lanka, setting new standards in professionalism, reliability, and client
+                satisfaction.
               </p>
             </div>
 
@@ -106,11 +126,13 @@ export function Benefits() {
                 </h3>
               </div>
               <p className="text-gray-700 text-base leading-relaxed relative z-10">
-                To deliver effective, efficient, and customized security and
-                fire-safety solutions through disciplined operations, well-trained
-                personnel, and cutting-edge technology — ensuring the highest
-                level of protection for our clients.
-              </p>
+                To deliver effective, efficient, and customized security and fire-safety solutions
+                through disciplined operations, well-trained personnel, and cutting-edge technology
+                — ensuring the highest level of protection for our clients.
+              </p>  
+
+             
+              
             </div>
           </div>
         </div>
@@ -119,7 +141,6 @@ export function Benefits() {
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
           {/* Image Slider */}
           <div className="w-full md:w-1/2 relative group">
-            {/* Swiper Slider */}
             <Swiper
               modules={[Autoplay, Pagination]}
               spaceBetween={20}

@@ -8,8 +8,9 @@ export function Navbar() {
 
   const navItems = [
     { name: 'Home', id: 'hero' },
-    { name: 'Services', id: 'services' },
     { name: 'About', id: 'benefits' },
+    { name: 'Services', id: 'services' },
+    { name: 'Training', id: 'training' },
     { name: 'Management', id: 'team' },
     { name: 'Contact', id: 'contact' },
   ];
@@ -85,12 +86,13 @@ export function Navbar() {
               {item.name}
             </button>
           ))}
-          <button
-            onClick={() => scrollToSection('contact')}
+          <a
+            href="mailto:reservations@keylankasolutions.com"
             className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-6 py-2.5 rounded-full font-medium transition-all hover:shadow-lg hover:scale-105 active:scale-95"
           >
             Get a Quote
-          </button>
+          </a>
+
         </nav>
 
         {/* Mobile Menu Button */}

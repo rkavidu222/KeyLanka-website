@@ -97,14 +97,15 @@ export function App() {
             <AnimatedSection><Hero /></AnimatedSection>
           </section>
 
-          <section id="services">
-            <AnimatedSection><Services /></AnimatedSection>
-          </section>
-
           <section id="benefits">
             <AnimatedSection><Benefits /></AnimatedSection>
           </section>
 
+          <section id="services">
+            <AnimatedSection><Services /></AnimatedSection>
+          </section>
+
+        
           <section id="training">
             <AnimatedSection><Training /></AnimatedSection>
           </section>

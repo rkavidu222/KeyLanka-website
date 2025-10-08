@@ -39,20 +39,20 @@ export function Team() {
           <div className="h-1 w-24 bg-gradient-to-r from-blue-600 to-purple-500 mx-auto mb-6 rounded-full"></div>
           <p className="text-lg md:text-xl text-gray-700">
             Our company is led by experienced professionals with extensive
-            military backgrounds, bringing discipline, strategy, and excellence
+            military and software expertise, bringing discipline, strategy, and innovation
             to security services.
           </p>
         </div>
 
         <div className="max-w-5xl mx-auto space-y-16">
-          {/* Team Card */}
+          {/* Brigadier Priyankara Card */}
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-transform duration-300 group hover:scale-[1.02]">
             <div className="md:flex">
               {/* Image Section */}
               <div className="md:w-2/5 relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 group-hover:scale-105 transition-transform rounded-3xl"></div>
                 <img
-                  src="/images/team/team1.jpg"
+                  src="/images/owner.jpeg"
                   alt="Brigadier Priyankara Vidanagamage"
                   className="w-full h-full object-cover object-center relative z-10 aspect-[4/5] md:aspect-auto rounded-3xl transform transition-transform group-hover:scale-105"
                   loading="lazy"
@@ -108,6 +108,58 @@ export function Team() {
                     href="mailto:keylanka.sec@gmail.com"
                     className="bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-200 hover:to-purple-200 text-blue-600 p-3 rounded-full transition-all transform hover:scale-110 shadow-md"
                     aria-label="Email Brigadier Priyankara Vidanagamage"
+                  >
+                    <MailIcon className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="#"
+                    className="bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-200 hover:to-purple-200 text-blue-600 p-3 rounded-full transition-all transform hover:scale-110 shadow-md"
+                    aria-label="View LinkedIn profile"
+                  >
+                    <LinkedinIcon className="h-5 w-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Januda Vidanagamage Card */}
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-transform duration-300 group hover:scale-[1.02]">
+            <div className="md:flex">
+              {/* Image Section */}
+              <div className="md:w-2/5 relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 group-hover:scale-105 transition-transform rounded-3xl"></div>
+                <img
+                  src="/images/januda.jpeg"
+                  alt="Januda Vidanagamage"
+                  className="w-full h-full object-cover object-center relative z-10 aspect-[4/5] md:aspect-auto rounded-3xl transform transition-transform group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg">
+                  Director
+                </div>
+              </div>
+
+              {/* Info Section */}
+              <div className="p-8 md:p-10 md:w-3/5">
+                <h3 className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-500 mb-2">
+                  Januda Vidanagamage, BEng (Hons) Software Engineering
+                </h3>
+                <p className="text-blue-600 font-medium mb-4 pb-4 border-b border-gray-100">
+                  Director
+                </p>
+                <p className="text-gray-700 mb-6 text-lg">
+                  Januda leads the company’s software, IT, and digital solutions,
+                  ensuring modern technology supports efficient operations and
+                  innovative client services.
+                </p>
+
+                {/* Contact Buttons */}
+                <div className="flex space-x-4">
+                  <a
+                    href="mailto:keylanka.sec@gmail.com"
+                    className="bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-200 hover:to-purple-200 text-blue-600 p-3 rounded-full transition-all transform hover:scale-110 shadow-md"
+                    aria-label="Email Januda Vidanagamage"
                   >
                     <MailIcon className="h-5 w-5" />
                   </a>
