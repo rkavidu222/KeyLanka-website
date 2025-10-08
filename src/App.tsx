@@ -104,8 +104,7 @@ export function App() {
 
           <section id="services">
             <AnimatedSection><Services /></AnimatedSection>
-          </section>
-
+          </section>  
 
         
           <section id="training">
@@ -115,7 +114,6 @@ export function App() {
           <section id="team">
             <AnimatedSection><Team /></AnimatedSection>
           </section>
-          
           
 
           <section id="contact">
