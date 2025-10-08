@@ -186,83 +186,84 @@ export function Benefits() {
         </div>
       </section>
 
-      {/* Section 2: Image Slider + Benefits */}
-      <section id="benefits" className="relative py-16 md:py-24 bg-gray-50 overflow-hidden">
-        {/* Background blurred shapes */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-purple-300/20 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+     {/* Section 2: Image Slider + Benefits */}
+<section id="benefits" className="relative py-16 md:py-24 bg-gray-50 overflow-hidden">
+  {/* Background blurred shapes */}
+  <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-purple-300/20 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
 
-        <div className="container mx-auto px-6 md:px-12 space-y-16 relative z-10">
-          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-            {/* Image Slider */}
-            <div className="w-full md:w-1/2 relative group rounded-3xl overflow-hidden shadow-2xl">
-              <Swiper
-                modules={[Autoplay, Pagination]}
-                spaceBetween={20}
-                slidesPerView={1}
-                autoplay={{ delay: 3000, disableOnInteraction: false }}
-                pagination={{ clickable: true }}
-                loop
-                className="rounded-3xl overflow-hidden"
-              >
-                {images.map((img, idx) => (
-                  <SwiperSlide key={idx} className="relative">
-                    <img
-                      src={img}
-                      alt={`Slide ${idx + 1}`}
-                      className="w-full object-cover aspect-[4/3] transition-transform group-hover:scale-105 rounded-3xl"
-                    />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+  <div className="container mx-auto px-6 md:px-12 space-y-16 relative z-10">
+    <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+      {/* Image Slider */}
+      <div className="w-full md:w-1/2 relative group rounded-3xl overflow-hidden shadow-2xl">
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          spaceBetween={20}
+          slidesPerView={1}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          loop
+          className="rounded-3xl overflow-hidden"
+        >
+          {images.map((img, idx) => (
+            <SwiperSlide key={idx} className="relative rounded-3xl overflow-hidden">
+              <img
+                src={img}
+                alt={`Slide ${idx + 1}`}
+                className="w-full object-cover aspect-[4/3] transition-transform group-hover:scale-105 rounded-3xl"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-              {/* Counter */}
-              <div className="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur-md p-4 md:p-6 rounded-2xl shadow-xl z-20 border border-gray-100 hover:shadow-2xl transition-all max-w-[80%] md:max-w-none">
-                <div className="flex items-center">
-                  <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent mr-3 md:mr-4">
-                    <Counter from={0} to={34} />+
-                  </p>
-                  <p className="text-gray-800 font-medium text-sm md:text-base">
-                    Years of <br /> Military Experience
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Benefits List */}
-            <div className="w-full md:w-1/2 mt-10 md:mt-0 space-y-6">
-              <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-600 rounded-full mb-6 font-medium text-sm shadow-sm">
-                <AwardIcon className="h-4 w-4 mr-2" />
-                <span>Our Approach</span>
-              </div>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900 mb-6">
-                Our Core Values & Approach
-              </h2>
-              <div className="grid grid-cols-1 gap-4 md:gap-6">
-                {benefits.map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                    className="flex items-start p-4 md:p-5 bg-white rounded-2xl shadow hover:shadow-2xl transition-shadow gap-4 md:gap-6 border border-gray-100"
-                  >
-                    <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-xl text-white flex-shrink-0 shadow-md">
-                      {benefit.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-lg md:text-xl font-semibold text-blue-900 mb-1">
-                        {benefit.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm md:text-base">{benefit.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+        {/* Fixed Counter on card */}
+        <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md p-3 md:p-4 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all max-w-[70%] md:max-w-[50%] z-20">
+          <div className="flex items-center gap-2 md:gap-3">
+            <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+              <Counter from={0} to={34} />+
+            </p>
+            <p className="text-gray-800 font-medium text-xs md:text-sm">
+              Years of <br /> Military Experience
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Benefits List */}
+      <div className="w-full md:w-1/2 mt-10 md:mt-0 space-y-6">
+        <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-600 rounded-full mb-6 font-medium text-sm shadow-sm">
+          <AwardIcon className="h-4 w-4 mr-2" />
+          <span>Our Approach</span>
+        </div>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900 mb-6">
+          Our Core Values & Approach
+        </h2>
+        <div className="grid grid-cols-1 gap-4 md:gap-6">
+          {benefits.map((benefit, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="flex items-start p-4 md:p-5 bg-white rounded-2xl shadow hover:shadow-2xl transition-shadow gap-4 md:gap-6 border border-gray-100"
+            >
+              <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-xl text-white flex-shrink-0 shadow-md">
+                {benefit.icon}
+              </div>
+              <div>
+                <h3 className="text-lg md:text-xl font-semibold text-blue-900 mb-1">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-600 text-sm md:text-base">{benefit.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
     </>
   );
 }
