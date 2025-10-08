@@ -10,7 +10,7 @@ interface AnimatedSectionProps {
 export function AnimatedSection({ children, delay = 0 }: AnimatedSectionProps) {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    threshold: 0.1, // earlier trigger for mobile
+    threshold: 0, // earlier trigger for mobile
     triggerOnce: false,
   });
 
