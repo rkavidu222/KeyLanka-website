@@ -8,61 +8,62 @@ import {
   FlameIcon,
   CarIcon,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Services() {
   const services = [
     {
-      icon: <FlameIcon className="h-7 w-7 md:h-10 md:w-10" />,
+      icon: <FlameIcon className="h-8 w-8 md:h-10 md:w-10" />,
       title: "Fire & Safety Solutions",
       description: (
         <>
-          <p className="mb-2 text-sm md:text-base">
-            Comprehensive fire protection for your business and premises. Services include:
+          <p className="mb-2 text-sm md:text-base text-gray-200">
+            Comprehensive fire protection for your business and premises:
           </p>
-          <ul className="list-disc list-inside text-gray-600 space-y-1 text-sm md:text-base">
+          <ul className="list-disc list-inside text-gray-100/80 space-y-1 text-sm md:text-base">
             <li>Fire risk assessment</li>
-            <li>Fire system design & installation</li>
-            <li>Supply of fire equipment</li>
-            <li>System inspection & maintenance</li>
-            <li>Training</li>
+            <li>System design & installation</li>
+            <li>Fire equipment supply</li>
+            <li>Inspection & maintenance</li>
+            <li>Fire-safety training</li>
           </ul>
         </>
       ),
       color: "from-orange-400 to-red-500",
     },
     {
-      icon: <BuildingIcon className="h-7 w-7 md:h-10 md:w-10" />,
+      icon: <BuildingIcon className="h-8 w-8 md:h-10 md:w-10" />,
       title: "Static Security Guarding",
       description:
-        "Professional guards for industrial, commercial, and residential sites with military-grade discipline.",
-      color: "from-blue-400 to-blue-600",
+        "Professional guards for industrial, commercial, and residential sites with military-grade discipline and training.",
+      color: "from-blue-400 to-indigo-500",
     },
     {
-      icon: <CarIcon className="h-7 w-7 md:h-10 md:w-10" />,
+      icon: <CarIcon className="h-8 w-8 md:h-10 md:w-10" />,
       title: "Mobile Patrol & Escort Services",
       description:
-        "Secure transport and rapid response teams for dynamic security needs and asset protection.",
+        "Secure transport and rapid response units for dynamic protection of assets and personnel.",
       color: "from-green-400 to-teal-500",
     },
     {
-      icon: <UserIcon className="h-7 w-7 md:h-10 md:w-10" />,
+      icon: <UserIcon className="h-8 w-8 md:h-10 md:w-10" />,
       title: "VIP Protection / Executive Security",
       description:
-        "Close protection for high-profile individuals and events by experienced security professionals.",
-      color: "from-purple-400 to-indigo-500",
+        "Close protection for high-profile clients and events by experienced professionals trained in advanced defensive strategies.",
+      color: "from-purple-400 to-violet-500",
     },
     {
-      icon: <AlertTriangleIcon className="h-7 w-7 md:h-10 md:w-10" />,
+      icon: <AlertTriangleIcon className="h-8 w-8 md:h-10 md:w-10" />,
       title: "Event Security",
       description:
-        "Planning and deployment for corporate and private events with meticulous attention to detail.",
+        "Tailored planning, crowd management, and on-site coordination for corporate, entertainment, and private events.",
       color: "from-amber-400 to-yellow-500",
     },
     {
-      icon: <CameraIcon className="h-7 w-7 md:h-10 md:w-10" />,
+      icon: <CameraIcon className="h-8 w-8 md:h-10 md:w-10" />,
       title: "Surveillance & Access Control",
       description:
-        "CCTV monitoring, intrusion detection, and electronic access control systems with modern technology integration.",
+        "CCTV monitoring, intrusion detection, and access systems integrated with the latest digital technology.",
       color: "from-cyan-400 to-blue-500",
     },
   ];
@@ -70,53 +71,67 @@ export function Services() {
   return (
     <section
       id="services"
-      className="py-12 md:py-24 bg-gray-50 relative overflow-hidden"
+      className="relative overflow-hidden py-20 md:py-28 bg-gradient-to-b from-indigo-950 via-purple-950 to-blue-950 text-white"
     >
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-64 md:w-96 h-64 md:h-96 bg-gradient-to-br from-blue-200 to-purple-200 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-64 md:w-96 h-64 md:h-96 bg-gradient-to-br from-pink-200 to-yellow-200 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+      {/* Animated background glows */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-500/30 blur-[160px] rounded-full animate-pulse-slow"></div>
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/30 blur-[160px] rounded-full animate-pulse-slow delay-200"></div>
 
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
-          <div className="inline-flex items-center px-3 py-1.5 bg-gradient-to-r from-blue-100 to-blue-200 text-blue-600 rounded-full mb-3 md:mb-4 font-medium text-xs md:text-sm shadow-sm">
-            <ShieldIcon className="h-4 w-4 mr-2" />
-            <span>Professional Security</span>
+        <motion.div
+          className="text-center max-w-3xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-md text-blue-200 rounded-full mb-4 font-medium text-sm shadow-sm border border-white/20">
+            <ShieldIcon className="h-4 w-4 mr-2 text-blue-300" />
+            <span>Professional Security Services</span>
           </div>
-          <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 md:mb-4">
-            Our Security Services
+
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+            Our Specialized Services
           </h2>
-          <div className="h-1 w-16 md:w-24 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-4 md:mb-6 rounded-full"></div>
-          <p className="text-gray-600 text-sm md:text-lg">
-            Key Lanka Solutions offers a full spectrum of security and fire-safety
-            services for individuals, corporates, and institutions.
+          <div className="h-1 w-24 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-6 rounded-full"></div>
+          <p className="text-gray-300 text-lg leading-relaxed">
+            Key Lanka Solutions delivers a complete range of protection and fire-safety
+            services designed for reliability, readiness, and trust.
           </p>
-        </div>
+        </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white/80 backdrop-blur-md rounded-3xl shadow-md hover:shadow-xl transition-all p-4 md:p-6 lg:p-8 group border border-gray-200 hover:-translate-y-1 duration-300 flex flex-col items-start"
+              className="group bg-white/10 border border-white/20 rounded-3xl p-8 shadow-lg hover:shadow-purple-900/50 hover:bg-white/15 backdrop-blur-md transition-all duration-500 transform hover:-translate-y-3 flex flex-col justify-start"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: index * 0.1 }}
             >
               {/* Icon */}
               <div
-                className={`mb-4 md:mb-6 bg-gradient-to-br ${service.color} p-3 md:p-4 rounded-2xl text-white inline-flex justify-center items-center group-hover:scale-105 transition-transform duration-300 shadow-md self-center`}
+                className={`mb-6 bg-gradient-to-br ${service.color} p-4 rounded-2xl text-white inline-flex justify-center items-center shadow-md mx-auto group-hover:scale-110 transition-transform duration-300`}
               >
                 {service.icon}
               </div>
-              {/* Title (centered) */}
-              <h3 className="text-base md:text-lg lg:text-xl font-bold text-gray-900 mb-2 md:mb-3 text-center w-full">
+
+              {/* Title */}
+              <h3 className="text-lg md:text-xl font-bold text-center text-white mb-3 group-hover:text-purple-200 transition-colors">
                 {service.title}
               </h3>
-              {/* Description (left-aligned) */}
-              <div className="text-gray-600 text-sm md:text-base text-left w-full">
+
+              {/* Description */}
+              <div className="text-gray-200/90 text-sm md:text-base text-left leading-relaxed">
                 {typeof service.description === "string"
                   ? service.description
                   : service.description}
               </div>
-            </div>
+
+              {/* Glow Line */}
+              <div className="mt-6 h-[2px] w-16 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </motion.div>
           ))}
         </div>
       </div>

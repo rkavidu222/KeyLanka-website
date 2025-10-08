@@ -160,36 +160,40 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.7 }}
-            className="mt-6 text-gray-300 text-xs sm:text-sm sm:text-base space-y-2 border-t border-white/10 pt-6 max-w-2xl mx-auto"
+            className="mt-6 max-w-2xl mx-auto p-6 bg-blue-900/70 backdrop-blur-md rounded-2xl shadow-lg border border-blue-400/20 space-y-3"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-white">
-            <div className="flex items-center gap-2">
-              <span className="font-semibold">📞 Official:</span>
-              <a href="tel:+94703311333" className="hover:underline">
-                070 331 1333
-              </a>
+              <div className="flex items-center gap-2">
+                <PhoneIcon className="h-4 w-4 text-blue-300" />
+                <span className="font-semibold">Official:</span>
+                <a href="tel:+94703311333" className="hover:underline text-blue-200">
+                  070 331 1333
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <PhoneIcon className="h-4 w-4 text-blue-300" />
+                <span className="font-semibold">Personal:</span>
+                <a href="tel:+94712527950" className="hover:underline text-blue-200">
+                  071 252 7950
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <PhoneIcon className="h-4 w-4 text-blue-300" />
+                <span className="font-semibold">Landline:</span>
+                <a href="tel:+94112848391" className="hover:underline text-blue-200">
+                  011 284 8391
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <MailIcon className="h-4 w-4 text-blue-300" />
+                <span className="font-semibold">E-Mail:</span>
+                <a href="mailto:keylanka.sec@gmail.com" className="hover:underline text-blue-200">
+                  keylanka.sec@gmail.com
+                </a>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="font-semibold">📞 Personal:</span>
-              <a href="tel:+94712527950" className="hover:underline">
-                071 252 7950
-              </a>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="font-semibold">☎️ Land:</span>
-              <a href="tel:+94112848391" className="hover:underline">
-                011 284 8391
-              </a>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="font-semibold">📧 E-Mail:</span>
-              <a href="mailto:keylanka.sec@gmail.com" className="hover:underline">
-                keylanka.sec@gmail.com
-              </a>
-            </div>
-          </div>
-
           </motion.div>
+
         </motion.div>
       </div>
     </section>

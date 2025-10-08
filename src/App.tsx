@@ -6,6 +6,7 @@ import { Services } from './components/Services';
 import { Benefits } from './components/Benefits';
 import { Training } from './components/Training';
 import { Team } from './components/Team';
+import { Testimonials } from './components/Testimonials';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { AnimatedSection } from './components/AnimatedSection';
@@ -105,6 +106,7 @@ export function App() {
             <AnimatedSection><Services /></AnimatedSection>
           </section>
 
+
         
           <section id="training">
             <AnimatedSection><Training /></AnimatedSection>
@@ -113,6 +115,8 @@ export function App() {
           <section id="team">
             <AnimatedSection><Team /></AnimatedSection>
           </section>
+          
+          
 
           <section id="contact">
             <AnimatedSection><Contact /></AnimatedSection>
