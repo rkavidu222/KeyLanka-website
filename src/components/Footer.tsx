@@ -106,9 +106,10 @@ export function Footer() {
                 <span className="text-blue-100">
                   Key Lanka Solutions (Pvt) Ltd
                   <br />
-                  Colombo, Sri Lanka
+                  4/88, Highlevel Road, Maharagama, Sri Lanka
                 </span>
               </li>
+
             </ul>
           </div>
         </div>

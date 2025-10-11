@@ -1,30 +1,57 @@
 import React from "react";
 import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon } from "lucide-react";
 
+type ContactLine = {
+  text: string;
+  link?: string; // optional link
+};
+
+type ContactDetail = {
+  icon: JSX.Element;
+  title: string;
+  content: ContactLine[];
+  bg: string;
+};
+
 export function Contact() {
-  const contactDetails = [
+  const contactDetails: ContactDetail[] = [
     {
       icon: <PhoneIcon className="h-6 w-6 text-white" />,
       title: "Phone",
-      content: ["070 331 1333 (Official)", "071 252 7950 (Personal)", "011 284 8391 (Land)"],
+      content: [
+        { text: "070 331 1333 (Official)", link: "tel:0703311333" },
+        { text: "071 252 7950 (Personal)", link: "tel:0712527950" },
+        { text: "011 284 8391 (Land)", link: "tel:0112848391" },
+      ],
       bg: "from-blue-500 to-indigo-500",
     },
     {
       icon: <MailIcon className="h-6 w-6 text-white" />,
       title: "Email",
-      content: ["keylanka.sec@gmail.com"],
+      content: [
+        { text: "keylanka.sec@gmail.com", link: "mailto:keylanka.sec@gmail.com" },
+      ],
       bg: "from-purple-500 to-fuchsia-500",
     },
     {
       icon: <MapPinIcon className="h-6 w-6 text-white" />,
       title: "Location",
-      content: ["Key Lanka Solutions (Pvt) Ltd", "Colombo, Sri Lanka"],
+      content: [
+        {
+          text: "4/88, Highlevel Road, Maharagama, Sri Lanka",
+          link: "" 
+        },
+        { text: "Key Lanka Solutions (Pvt) Ltd" },
+      ],
       bg: "from-green-400 to-emerald-500",
     },
     {
       icon: <ClockIcon className="h-6 w-6 text-white" />,
       title: "Hours",
-      content: ["Monday - Friday: 8:00 AM - 5:00 PM", "24/7 Emergency Response"],
+      content: [
+        { text: "Monday - Friday: 8:00 AM - 5:00 PM" },
+        { text: "24/7 Emergency Response" },
+      ],
       bg: "from-pink-500 to-red-500",
     },
   ];
@@ -35,7 +62,7 @@ export function Contact() {
       className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-b from-gray-50 via-white to-gray-100"
       aria-labelledby="contact-heading"
     >
-      {/* Soft Gradient Blobs / Light Glows */}
+      {/* Soft Gradient Backgrounds */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-10%] right-[-10%] w-[450px] h-[450px] bg-gradient-to-br from-blue-300 via-purple-300 to-pink-300 rounded-full blur-3xl opacity-40 animate-pulse"></div>
         <div className="absolute bottom-[-15%] left-[-10%] w-[400px] h-[400px] bg-gradient-to-br from-indigo-200 via-purple-200 to-blue-200 rounded-full blur-3xl opacity-50 animate-pulse"></div>
@@ -52,11 +79,15 @@ export function Contact() {
             id="contact-heading"
             className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4"
           >
-            Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Key Lanka Solutions</span>
+            Contact{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+              Key Lanka Solutions
+            </span>
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6 rounded-full"></div>
           <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
-            Get in touch with our security professionals to explore tailored protection solutions.
+            Get in touch with our security professionals to explore tailored
+            protection solutions.
           </p>
         </div>
 
@@ -75,14 +106,26 @@ export function Contact() {
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
                 {item.title}
               </h3>
-              {item.content.map((line, i) => (
-                <p
-                  key={i}
-                  className="text-gray-600 text-sm md:text-base leading-relaxed"
-                >
-                  {line}
-                </p>
-              ))}
+              {item.content.map((line, i) =>
+                line.link ? (
+                  <a
+                    key={i}
+                    href={line.link}
+                    target={line.link.startsWith("http") ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-purple-600 text-sm md:text-base leading-relaxed transition-colors underline-offset-2 hover:underline"
+                  >
+                    {line.text}
+                  </a>
+                ) : (
+                  <p
+                    key={i}
+                    className="text-gray-600 text-sm md:text-base leading-relaxed"
+                  >
+                    {line.text}
+                  </p>
+                )
+              )}
             </div>
           ))}
         </div>

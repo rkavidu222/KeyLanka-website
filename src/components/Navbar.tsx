@@ -52,10 +52,9 @@ export function Navbar() {
 
   return (
     <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-md
-          ${isScrolled ? 'bg-white/90 shadow-lg py-3' : 'bg-white/80 py-4'}`}
-      >
-
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-md
+        ${isScrolled ? 'bg-white/90 shadow-lg py-3' : 'bg-white/80 py-4'}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
         <button onClick={() => scrollToSection('hero')} className="flex items-center group">
@@ -86,13 +85,16 @@ export function Navbar() {
               {item.name}
             </button>
           ))}
+
+          {/* WhatsApp Button */}
           <a
-            href="mailto:reservations@keylankasolutions.com"
+            href="https://wa.me/94712527950"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-6 py-2.5 rounded-full font-medium transition-all hover:shadow-lg hover:scale-105 active:scale-95"
           >
             Get a Quote
           </a>
-
         </nav>
 
         {/* Mobile Menu Button */}
@@ -123,12 +125,16 @@ export function Navbar() {
               {item.name}
             </button>
           ))}
-          <button
-            onClick={() => scrollToSection('contact')}
+
+          {/* WhatsApp Button for Mobile */}
+          <a
+            href="https://wa.me/94712527950"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-center font-medium transition-all hover:scale-105 shadow-sm hover:shadow-md active:scale-95"
           >
             Get a Quote
-          </button>
+          </a>
         </div>
       </div>
     </header>
